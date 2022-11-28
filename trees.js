@@ -6,6 +6,7 @@ let imgtrunk2;
 let sapling;
 let truck;
 let again;
+let fact;
 let trunk = 0;
 let trunk1 = true;
 let trunk2 = true;
@@ -34,10 +35,12 @@ this.setup = function() {
   sapling = loadImage("assets/sapling.png");
   truck = loadImage("assets/truck.png");
   again = loadImage("assets/tryagain.png");
+  fact = loadImage("assets/trees.png")
 }
 
 this.draw = function() {
   image(field,0,0);
+  image(fact, 0, 600);
   if (yes) {tryagain = false};
   if (no) {
     this.sceneManager.showScene(ocean);
