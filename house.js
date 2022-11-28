@@ -71,7 +71,7 @@ this.draw = function() {
     if (driveT > 0) {
     driveT = (driveT - 3);}
     if (driveT < 0 && driveR < 175) {
-      tryagain = true;
+      tryagainH = true;
     }
   }
 
