@@ -1,3 +1,4 @@
+function ocean() {
 let shore;
 let water;
 let bottle;
@@ -18,7 +19,7 @@ let tryagainO = false;
 let yesO = false;
 let noO = false;
 
-function preload() {
+this.setup = function() {
   shore = loadImage('assets/shore.png');
   water = loadImage('assets/wave.png')
   plastic = loadImage('assets/plastic.png');
@@ -26,10 +27,8 @@ function preload() {
   againO = loadImage('assets/tryagain.png');
 }
 
-function setup() {
-}
 
-function draw() { 
+this.draw = function() { 
   image(shore,0,0);
 
   if (plastic1){
@@ -71,11 +70,12 @@ function draw() {
   if (yesO) {tryagainO = false;}
   if (noO) {
   //move to next scene
+    this.sceneManager.showScene(house);
   }
   
 }
 
-function mousePressed() {
+this.mousePressed = function() {
   if (collidePointRect(mouseX,mouseY,110,235,50,130)) {
     plastic1 = false; clean++;}
   if (collidePointRect(mouseX,mouseY,455,455,50,130)){
@@ -95,3 +95,4 @@ function mousePressed() {
 }
 
 //want to add text about how much trash ends up in ocean yearly
+}

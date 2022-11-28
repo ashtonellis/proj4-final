@@ -1,3 +1,5 @@
+function trees() {
+
 let field;
 let imgtrunk1;
 let imgtrunk2;
@@ -24,10 +26,8 @@ let tryagain = false;
 let yes = false;
 let no = false;
 
-function setup() {
-}
 
-function preload() {
+this.setup = function() {
   field = loadImage("assets/field.png");
   imgtrunk1 = loadImage("assets/trunk1.png");
   imgtrunk2 = loadImage("assets/trunk2.png");
@@ -36,7 +36,7 @@ function preload() {
   again = loadImage("assets/tryagain.png");
 }
 
-function draw() {
+this.draw = function() {
   image(field,0,0);
   if (yes) {tryagain = false};
   if (no) {
@@ -74,7 +74,7 @@ function draw() {
 
 }
 
- function mousePressed() {
+ this.mousePressed = function() {
   if (collidePointRect(mouseX,mouseY,42,460,150,50)) {trunk1 = false; trunk++;}
   if (collidePointRect(mouseX,mouseY,342,296,150,50)) {trunk2 = false; trunk++;}
   if (collidePointRect(mouseX,mouseY,546,236,150,50)) {trunk3 = false;trunk++}
@@ -97,3 +97,4 @@ function draw() {
 }
 
  //want to add text about amount of trees torn down yearly
+}

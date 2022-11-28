@@ -1,3 +1,5 @@
+function house() {
+
 let curb;
 let landfill;
 let binR;
@@ -17,10 +19,8 @@ let tryagainH = false;
 let yesH = false;
 let noH = false;
 
-function setup() {
-}
 
-function preload() {
+this.setup = function() {
   curb = loadImage('assets/curb.png')
   landfill = loadImage('assets/landfill.png')
   binR = loadImage('assets/binR.png')
@@ -30,7 +30,7 @@ function preload() {
   againH = loadImage('assets/tryagain.png')
 }
 
-function draw() {
+this.draw = function() {
   if (house) {
     image(curb,0,0);
   } else { 
@@ -97,7 +97,7 @@ function draw() {
   }
 }
 
-function mousePressed() {
+this.mousePressed = function() {
   if (collidePointRect(mouseX,mouseY,221,259,96,130)) {
     recycle = true;}
   if (collidePointRect(mouseX,mouseY,326,269,96,130)) {
@@ -106,4 +106,6 @@ function mousePressed() {
     yesH = true;}
   if (collidePointRect(mouseX,mouseY,450,190,80,30)) {
     noH = true;}
+}
+
 }

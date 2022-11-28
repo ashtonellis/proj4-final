@@ -1,4 +1,4 @@
-
+let mgr;
 
 function setup() {
   createCanvas(800,600);
