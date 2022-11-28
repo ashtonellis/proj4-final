@@ -1,10 +1,23 @@
+
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800,600);
+  mgr = new SceneManager();
+  mgr.wire();
+  mgr.showScene(trees);
 }
 
 function draw() {
-  background(125);
+  mgr.draw();
 }
+
+
+
+
+
+
+
+
 
 
 // https://tree-nation.com/projects/inside-tree-nation/article/9739-how-many-trees-are-lost-to-deforestation-every-year

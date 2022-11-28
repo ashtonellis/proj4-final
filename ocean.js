@@ -3,7 +3,7 @@ let water;
 let bottle;
 let plastic;
 let glass;
-let again;
+let againO;
 let clean = 0;
 let wave = -350;
 let plastic1 = true;
@@ -14,20 +14,19 @@ let glass2 = true;
 let glass3 = true;
 let up = false;
 let down = false;
-let tryagain = false;
-let yes = false;
-let no = false;
+let tryagainO = false;
+let yesO = false;
+let noO = false;
 
 function preload() {
   shore = loadImage('assets/shore.png');
   water = loadImage('assets/wave.png')
   plastic = loadImage('assets/plastic.png');
   glass = loadImage('assets/glass.png');
-  again = loadImage('assets/tryagain.png');
+  againO = loadImage('assets/tryagain.png');
 }
 
 function setup() {
-  createCanvas(800, 600);
 }
 
 function draw() { 
@@ -64,13 +63,13 @@ function draw() {
     glass3 = true;
     if (wave < -350) {
       down = false;
-      tryagain = true;
-      yes = false;
+      tryagainO = true;
+      yesO = false;
     } }  }
   
-  if (tryagain) {image(again,250,86)}
-  if (yes) {tryagain = false;}
-  if (no) {
+  if (tryagainO) {image(againO,250,86)}
+  if (yesO) {tryagainO = false;}
+  if (noO) {
   //move to next scene
   }
   
@@ -89,9 +88,9 @@ function mousePressed() {
     glass2 = false; clean++;}
   if (collidePointRect(mouseX,mouseY,580,295,50,155)){
     glass3 = false; clean++;}
-  if (tryagain) {
-    if (collidePointRect(mouseX,mouseY,270,190,80,30)) {yes = true;}
-    if (collidePointRect(mouseX,mouseY,450,190,80,30)) {no = true;}
+  if (tryagainO) {
+    if (collidePointRect(mouseX,mouseY,270,190,80,30)) {yesO = true;}
+    if (collidePointRect(mouseX,mouseY,450,190,80,30)) {noO = true;}
   }
 }
 

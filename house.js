@@ -4,7 +4,7 @@ let binR;
 let binT;
 let truckR;
 let truckT;
-let again;
+let againH;
 let house = true;
 let trash = false;
 let recycle = false;
@@ -13,12 +13,11 @@ let recyclebin = true;
 let driveR = 800;
 let driveT = 800;
 let next = 0;
-let tryagain = false;
-let yes = false;
-let no = false;
+let tryagainH = false;
+let yesH = false;
+let noH = false;
 
 function setup() {
-  createCanvas(800, 600);
 }
 
 function preload() {
@@ -28,7 +27,7 @@ function preload() {
   binT = loadImage('assets/binT.png')
   truckT = loadImage('assets/truckT.png')
   truckR = loadImage('assets/truckR.png')
-  again = loadImage('assets/tryagain.png')
+  againH = loadImage('assets/tryagain.png')
 }
 
 function draw() {
@@ -76,11 +75,11 @@ function draw() {
     }
   }
 
-  if (tryagain) {
-    image(again,250,86)
+  if (tryagainH) {
+    image(againH,250,86)
   }
 
-  if (yes) {
+  if (yesH) {
     house = true;
     trash = false;
     recycle = false;
@@ -89,11 +88,11 @@ function draw() {
     driveR = 800;
     driveT = 800;
     next = 0;
-    tryagain = false;
-    yes = false;
-    no = false;
+    tryagainH = false;
+    yesH = false;
+    noH = false;
   }
-  if (no) {
+  if (noH) {
     //move to end screen ?
   }
 }
@@ -104,7 +103,7 @@ function mousePressed() {
   if (collidePointRect(mouseX,mouseY,326,269,96,130)) {
     trash = true;}
   if (collidePointRect(mouseX,mouseY,270,190,80,30)) {
-    yes = true;}
+    yesH = true;}
   if (collidePointRect(mouseX,mouseY,450,190,80,30)) {
-    no = true;}
+    noH = true;}
 }

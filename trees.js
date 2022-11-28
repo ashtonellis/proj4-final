@@ -25,7 +25,6 @@ let yes = false;
 let no = false;
 
 function setup() {
-  createCanvas(800, 600);
 }
 
 function preload() {
@@ -41,7 +40,7 @@ function draw() {
   image(field,0,0);
   if (yes) {tryagain = false};
   if (no) {
-    //move to next scene
+    this.sceneManager.showScene(ocean);
   }
 
   if (trunk1) {image(imgtrunk1,42,460);}
