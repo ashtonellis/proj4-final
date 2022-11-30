@@ -18,6 +18,7 @@ let down = false;
 let tryagainO = false;
 let yesO = false;
 let noO = false;
+let factO;
 
 this.setup = function() {
   shore = loadImage('assets/shore.png');
@@ -25,11 +26,13 @@ this.setup = function() {
   plastic = loadImage('assets/plastic.png');
   glass = loadImage('assets/glass.png');
   againO = loadImage('assets/tryagain.png');
+  factO = loadImage('assets/ocean.png')
 }
 
 
 this.draw = function() { 
   image(shore,0,0);
+  image(factO,0,600);
 
   if (plastic1){
     image(plastic,110,235); }
@@ -69,8 +72,9 @@ this.draw = function() {
   if (tryagainO) {image(againO,250,86)}
   if (yesO) {tryagainO = false;}
   if (noO) {
-  //move to next scene
     this.sceneManager.showScene(house);
+    noO = false;
+    tryagainO = false;
   }
   
 }

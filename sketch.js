@@ -1,7 +1,6 @@
-let mgr;
 
 function setup() {
-  createCanvas(800,600);
+  createCanvas(800,800);
   mgr = new SceneManager();
   mgr.wire();
   mgr.showScene(trees);

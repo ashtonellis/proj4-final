@@ -44,6 +44,8 @@ this.draw = function() {
   if (yes) {tryagain = false};
   if (no) {
     this.sceneManager.showScene(ocean);
+    no = false;
+    tryagain = false
   }
 
   if (trunk1) {image(imgtrunk1,42,460);}
@@ -98,6 +100,4 @@ this.draw = function() {
     if (collidePointRect(mouseX,mouseY,450,190,80,30)) {no = true;}
   }
 }
-
- //want to add text about amount of trees torn down yearly
 }

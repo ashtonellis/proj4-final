@@ -7,17 +7,19 @@ let binT;
 let truckR;
 let truckT;
 let againH;
+let factH;
 let house = true;
 let trash = false;
 let recycle = false;
 let trashbin = true;
 let recyclebin = true;
-let driveR = 800;
+let driveR = 1100;
 let driveT = 800;
 let next = 0;
 let tryagainH = false;
 let yesH = false;
 let noH = false;
+
 
 
 this.setup = function() {
@@ -28,9 +30,11 @@ this.setup = function() {
   truckT = loadImage('assets/truckT.png')
   truckR = loadImage('assets/truckR.png')
   againH = loadImage('assets/tryagain.png')
+  factH = loadImage('assets/recycle.png')
 }
 
 this.draw = function() {
+  image(factH,0,600)
   if (house) {
     image(curb,0,0);
   } else { 
@@ -93,15 +97,29 @@ this.draw = function() {
     noH = false;
   }
   if (noH) {
-    //move to end screen ?
+    this.sceneManager.showScene(trees);
+    noH = false;
+    house = true;
+    trash = false;
+    recycle = false;
+    trashbin = true;
+    recyclebin = true;
+    driveR = 800;
+    driveT = 800;
+    next = 0;
+    tryagainH = false;
+    yesH = false;
+    noH = false;
   }
 }
 
 this.mousePressed = function() {
   if (collidePointRect(mouseX,mouseY,221,259,96,130)) {
-    recycle = true;}
-  if (collidePointRect(mouseX,mouseY,326,269,96,130)) {
+    recycle = true;
     trash = true;}
+  if (collidePointRect(mouseX,mouseY,326,269,96,130)) {
+    trash = true;
+    recycle = true;}
   if (collidePointRect(mouseX,mouseY,270,190,80,30)) {
     yesH = true;}
   if (collidePointRect(mouseX,mouseY,450,190,80,30)) {
